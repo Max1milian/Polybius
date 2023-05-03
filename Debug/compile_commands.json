@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/maximilian/Workspace/Polybius/Debug",
+  "command": "/usr/bin/g++  -I/home/maximilian/Workspace/Polybius/Debug/_deps/raylib_cpp-src/include -g -std=gnu++17 -Wall -Wextra -Werror -pedantic-errors -fanalyzer -o CMakeFiles/Polybius.dir/src/main.cpp.o -c /home/maximilian/Workspace/Polybius/src/main.cpp",
+  "file": "/home/maximilian/Workspace/Polybius/src/main.cpp",
+  "output": "CMakeFiles/Polybius.dir/src/main.cpp.o"
+}
+]

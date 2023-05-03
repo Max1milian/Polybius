@@ -1,0 +1,80 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"Debug/_deps/raylib_cpp-src/include/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"Debug/_deps/raylib_cpp-src/include/AudioDevice.hpp",
+				"Debug/_deps/raylib_cpp-src/include/AudioStream.hpp",
+				"Debug/_deps/raylib_cpp-src/include/BoundingBox.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Camera2D.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Camera3D.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Color.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Font.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Functions.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Gamepad.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Image.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Material.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Matrix.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Mesh.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Model.hpp",
+				"Debug/_deps/raylib_cpp-src/include/ModelAnimation.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Mouse.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Music.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Ray.hpp",
+				"Debug/_deps/raylib_cpp-src/include/RayCollision.hpp",
+				"Debug/_deps/raylib_cpp-src/include/RaylibException.hpp",
+				"Debug/_deps/raylib_cpp-src/include/raylib-cpp-utils.hpp",
+				"Debug/_deps/raylib_cpp-src/include/raylib-cpp.hpp",
+				"Debug/_deps/raylib_cpp-src/include/raylib.hpp",
+				"Debug/_deps/raylib_cpp-src/include/raymath.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Rectangle.hpp",
+				"Debug/_deps/raylib_cpp-src/include/RenderTexture.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Shader.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Sound.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Text.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Texture.hpp",
+				"Debug/_deps/raylib_cpp-src/include/TextureUnmanaged.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Touch.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Vector2.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Vector3.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Vector4.hpp",
+				"Debug/_deps/raylib_cpp-src/include/VrStereoConfig.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Wave.hpp",
+				"Debug/_deps/raylib_cpp-src/include/Window.hpp"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/raylib_cpp-build/include",
+		"source" : "Debug/_deps/raylib_cpp-src/include"
+	}
+}
