@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+#Cache Folders
+.ccls-cache
+
+#Cache Files
+compile_commands.json
