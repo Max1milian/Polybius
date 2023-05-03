@@ -1,40 +1,21 @@
 cmake_minimum_required(VERSION 3.14)
-project(Polybius)
+project(Polybius
+	LANGUAGES CXX
+	VERSION 0.0.1
+	DESCRIPTION "A 2D psychedelic Horror Shot-em Up!"
+	HOMEPAGE_URL "https://github.com/Max1milian/Polybius")
 
-# raylib
-find_package(raylib QUIET)
-if (NOT raylib_FOUND)
-    include(FetchContent)
-    FetchContent_Declare(
-        raylib
-        GIT_REPOSITORY https://github.com/raysan5/raylib.git
-        GIT_TAG 4.5.0
-    )
-    FetchContent_MakeAvailable(raylib)
-endif()
+include(cmake/dependencies.cmake)
 
-# raylib-cpp
-find_package(raylib_cpp QUIET)
-if (NOT raylib_cpp_FOUND)
-    include(FetchContent)
-    FetchContent_Declare(
-        raylib_cpp
-        GIT_REPOSITORY https://github.com/RobLoach/raylib-cpp.git
-        GIT_TAG v4.2.6
-    )
-    FetchContent_MakeAvailable(raylib_cpp)
-endif()
+if(MSVC)
+	add_compile_options(\W3 \WX)
+else()
+	add_compile_options(-Wall -Werror -Wextra -pedantic-errors -fanalyzer)
+endif(MSVC)
 
 # This is the main part:
-set(SOURCES main.cpp)
+set(SOURCES src/main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
-set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 11)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib_cpp)
-
-# Web Configurations
-if (${PLATFORM} STREQUAL "Web")
-    # Tell Emscripten to build an example.html file.
-    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html")
-endif()
-
-# That's it! You should have an example executable that you can run. Have fun!

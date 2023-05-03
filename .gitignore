@@ -30,3 +30,16 @@
 *.exe
 *.out
 *.app
+
+#Cached Files
+compile_commands.json
+
+#Cached Folders
+.ccls-cache
+
+#Build Folders
+
+[Dd]ebug
+[Rr]elease
+out/
+build/
