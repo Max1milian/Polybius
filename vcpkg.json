@@ -1,0 +1,10 @@
+{
+	"name": "polybius",
+	"description": "a 2d psychedelic horror shot-em up!",
+	"homepage": "https://github.com/Max1milian/Polybius",
+	"license": "GPL-3.0-only",
+	"dependencies": [
+		"raylib",
+		"fmt"
+	]
+}
