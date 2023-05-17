@@ -37,6 +37,7 @@ compile_commands.json
 #Cached Folders
 .ccls-cache
 .vscode
+.ccls
 
 #Build Folders
 
