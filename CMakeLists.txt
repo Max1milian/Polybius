@@ -8,6 +8,7 @@ project(Polybius
 include(cmake/CPM.cmake)
 CPMAddPackage("gh:SFML/SFML#2.6.x")
 CPMAddPackage("gh:fmtlib/fmt#9.1.0")
+CPMAddPackage("gh:erincatto/box2d#v2.4.1")
 
 if(MSVC)
 	add_compile_options(\W3 \WX)
@@ -28,4 +29,5 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	sfml-graphics 
 	sfml-audio 
 	fmt::fmt
+	box2d
 )
