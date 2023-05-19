@@ -1,26 +1,21 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
-
-int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
-    sf::CircleShape shape(window.getSize().x / 2.0f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
+int main() {
+  sf::RenderWindow window(sf::VideoMode(640, 480), "Testwindow");
+  // Creating our shape.
+  sf::RectangleShape rectangle(sf::Vector2f(128.0f, 128.0f));
+  rectangle.setFillColor(sf::Color::Red);
+  rectangle.setPosition(320, 240);
+  rectangle.setOrigin(rectangle.getSize().x / 2, rectangle.getSize().y / 2);
+  while (window.isOpen()) {
+    sf::Event event;
+    while (window.pollEvent(event)) {
+      if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+        // Close window button clicked.
+        window.close();
+      }
     }
-
-    return 0;
+    window.clear(sf::Color::Black);
+    window.draw(rectangle); // Drawing our shape.
+    window.display();
+  }
 }
-
