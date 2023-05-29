@@ -2,7 +2,7 @@
 int main() {
   sf::RenderWindow window(sf::VideoMode(640, 480), "Testwindow");
   // Creating our shape.
-  sf::RectangleShape rectangle(sf::Vector2f(128.0f, 128.0f));
+  sf::RectangleShape rectangle(sf::Vector2f(window.getSize().x / 2 , window.getSize().x / 2));
   rectangle.setFillColor(sf::Color::Red);
   rectangle.setPosition(320, 240);
   rectangle.setOrigin(rectangle.getSize().x / 2, rectangle.getSize().y / 2);
