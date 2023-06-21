@@ -6,8 +6,7 @@ project(Polybius
 	HOMEPAGE_URL "https://github.com/Max1milian/Polybius")
 
 include(cmake/CPM.cmake)
-#CPMAddPackage("gh:SFML/SFML#2.6.x")
-CPMAddPackage("gh:jhasse/JNGL#v1.5.0")
+CPMAddPackage("gh:SFML/SFML#2.6.x")
 CPMAddPackage("gh:fmtlib/fmt#9.1.0")
 CPMAddPackage("gh:erincatto/box2d#v2.4.1")
 
@@ -25,7 +24,9 @@ add_executable(${PROJECT_NAME} ${SRC_FILES})
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17)
 target_link_libraries(${PROJECT_NAME} PUBLIC 
-	jngl
+	sfml-system 
+	sfml-window 
+	sfml-audio
 	fmt::fmt
 	box2d
 )
