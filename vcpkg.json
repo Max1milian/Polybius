@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    "imgui",
+    "imgui-sfml",
+    "sfml",
+    "vulkan",
+    "glm"
+  ]
+}
