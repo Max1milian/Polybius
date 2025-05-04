@@ -3,3 +3,5 @@
 [Dd]ebug
 [Oo]ut
 
+vcpkg-manifest-install.log
+vcpkg_installed

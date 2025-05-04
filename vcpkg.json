@@ -1,9 +1,13 @@
 {
+  "name": "polybius",
+  "version": "0.0.1-dev",
+  "description": "A 2D psychedelic horro shoot-em up",
+  "homepage": "www.github.com/Max1milian/Polybius",
   "dependencies": [
+    "glm",
     "imgui",
     "imgui-sfml",
     "sfml",
-    "vulkan",
-    "glm"
+    "vulkan"
   ]
 }
