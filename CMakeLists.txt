@@ -9,7 +9,7 @@ project(Polybius
 include(cmake/deps.cmake)
 include(cmake/cflags.cmake)
 include(cmake/cppcheck.cmake)
+include(assets/CMakeLists.txt)
 
-add_subdirectory(assets)
 add_subdirectory(src)
 add_subdirectory(Polybius)

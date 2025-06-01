@@ -1,8 +1,10 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <iostream>
  
 int main()
 {
+    std::cout << ASSETS << std::endl;
     // Create the main window
     sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
  
@@ -11,14 +13,14 @@ int main()
     //sf::Sprite sprite(texture);
  
     // Create a graphical text to display
-    const sf::Font font("arial.ttf");
-    sf::Text text(font, "Hello SFML", 50);
+    // const sf::Font font("Polybius1981.ttf");
+    // sf::Text text(font, "Hello SFML", 50);
  
     // Load a music to play
-    //sf::Music music("nice_music.ogg");
+    // sf::Music music("nice_music.ogg");
  
     // Play the music
-    //music.play();
+    // music.play();
  
     // Start the game loop
     while (window.isOpen())
@@ -38,7 +40,7 @@ int main()
         //window.draw(sprite);
  
         // Draw the string
-        window.draw(text);
+        //window.draw(text);
  
         // Update the window
         window.display();
