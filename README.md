@@ -1,1 +1,1 @@
-A 2D psychedelic Horror Shooter, made with C++ and Raylib.
+A 2D psychedelic Horror Shooter, made with C++ and SFML.

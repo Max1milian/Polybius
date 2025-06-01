@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "ffmpeg",
+    "imgui",
+    "imgui-sfml",
+    "sfml",
+    "vulkan",
+    "avcpp"
+  ]
+}
