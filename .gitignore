@@ -3,3 +3,4 @@
 [Rr]elease
 vcpkg-manifest-install.log
 vcpkg_installed
+.cache

@@ -1,11 +1,12 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Keyboard.hpp>
 #include <iostream>
  
 int main()
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "SFML window");
+    sf::RenderWindow window(sf::VideoMode({1280, 720}), "SFML window");
  
     // Load a sprite to display
     //const sf::Texture texture("cute_image.jpg");
@@ -30,6 +31,11 @@ int main()
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
+            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+                if (keyPressed->scancode == sf::Keyboard::Scancode::Escape) {
+                    window.close();
+                }
+            }
         }
  
         // Clear screen
