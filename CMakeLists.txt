@@ -6,10 +6,10 @@ project(Polybius
         LANGUAGES CXX
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(cmake/deps.cmake)
 include(cmake/cflags.cmake)
 include(cmake/cppcheck.cmake)
-include(assets/CMakeLists.txt)
 
 add_subdirectory(src)
 add_subdirectory(Polybius)

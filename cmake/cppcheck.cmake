@@ -4,6 +4,7 @@ if (CMAKE_CXX_CPPCHECK)
         APPEND CMAKE_CXX_CPPCHECK 
             "--enable=warning"
             "--inconclusive"
+            "--std=c++17"
             "--force" 
             "--inline-suppr"
             "--suppressions-list=${CMAKE_SOURCE_DIR}/CppCheckSuppressions.txt"
