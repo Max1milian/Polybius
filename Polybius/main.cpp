@@ -9,7 +9,7 @@ int main()
     //init section
 
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({1920, 1080}), "Polybius", sf::State::Windowed);
+    sf::RenderWindow window(sf::VideoMode({1280, 720}), "Polybius",sf::Style::Default, sf::State::Windowed);
  
     // Load a sprite to display
     const sf::Texture texture("./assets/sprites/ship.png");
@@ -60,6 +60,7 @@ int main()
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Up) {
                     sprite.move({0, -2});
                 }
+                std::cout << "x position of the ship: " <<  sprite.getPosition().x << " position of the ship: " << sprite.getPosition().y << "\n";
             }
         }
  

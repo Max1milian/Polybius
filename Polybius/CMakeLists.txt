@@ -5,5 +5,6 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
                                         SFML::Window 
                                         SFML::Graphics
                                         SFML::Audio
-                                        SFML::System #need to remove them from the main executable since they're going to be linked against each library individually
+                                        SFML::System
+                                        glm::glm #need to remove them from the main executable since they're going to be linked against each library individually
 )
