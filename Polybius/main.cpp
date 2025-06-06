@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
- 
+
 int main()
 {
     //init section
@@ -16,8 +16,8 @@ int main()
     sf::Sprite sprite(texture);
     sprite.setScale({4,4});
     sprite.setPosition({(window.getSize().x / 2.f) + 100, window.getSize().y / 2.f});
-    
-    //kinda keep that snippet for subliminal message. Problably outsource that into its own procedure
+
+     //kinda keep that snippet for subliminal message. Problably outsource that into its own procedure
      // Create a graphical text to display
      //const sf::Font font("./assets/fonts/Polybius1981.ttf");
      //sf::Text text(font, "Hello SFML", 50);
@@ -41,8 +41,8 @@ int main()
                 //todo need to implement a rotation matrix that rotates the ship arround window.getWindowSize().x / 2 and windowy.getWindowSize().y / 2.f
                 /*
                  the rotation matrix is a 2x2 matrix that is defined by 
-                 [cos(θ) -sin(θ)
-                  sin(θ) cos(θ)]
+                 [cos(θ) -sin(θ)] [x]
+                 [sin(θ) cos(θ)]  [y]
                  */
             else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
                 if (keyPressed->scancode == sf::Keyboard::Scancode::Escape) {
@@ -64,7 +64,7 @@ int main()
         }
  
         // Clear screen
-        window.clear(sf::Color::Cyan);
+        window.clear(sf::Color::Black);
  
         // Draw the sprite
         window.draw(sprite);
