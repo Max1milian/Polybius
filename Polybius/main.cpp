@@ -1,7 +1,9 @@
 #include <pthread.h>
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Angle.hpp>
 #include <SFML/Window.hpp>
+#include <cstdlib>
 #include <iostream>
 
 int main()
@@ -56,11 +58,17 @@ int main()
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Down) {
                     sprite.move({0, 2});
+
+                    // PROBLEM: it's currently rotating the sprite 180 degree every frame. I just need it once. need to figure it out how
+                    // TODO: need to implement a if clause that checks if the sprite has already rotated once.
+                    sprite.rotate(sf::degrees(180));                 
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Up) {
                     sprite.move({0, -2});
+                    //same goes here. need to place that if clause here as well.
+                    sprite.rotate(sf::degrees(180));
                 }
-                std::cout << "x position of the ship: " <<  sprite.getPosition().x << " position of the ship: " << sprite.getPosition().y << "\n";
+                std::cout << "x position of the ship: " <<  sprite.getPosition().x << " y position of the ship: " << sprite.getPosition().y << "\n";
             }
         }
  
@@ -76,4 +84,6 @@ int main()
         // Update the window
         window.display();
     }
+    std::cout << std::endl;
+    return EXIT_SUCCESS;
 }
