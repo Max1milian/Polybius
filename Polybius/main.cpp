@@ -17,6 +17,7 @@ int main()
     const sf::Texture texture("./assets/sprites/ship.png");
     sf::Sprite sprite(texture);
     sprite.setScale({4,4});
+    sprite.setOrigin({texture.getSize().x / 2.f, texture.getSize().y / 2.f});
     sprite.setPosition({(window.getSize().x / 2.f) + 100, window.getSize().y / 2.f});
 
      //kinda keep that snippet for subliminal message. Problably outsource that into its own procedure
@@ -41,6 +42,7 @@ int main()
             if (event->is<sf::Event::Closed>())
                 window.close();
                 //todo need to implement a rotation matrix that rotates the ship arround window.getWindowSize().x / 2 and windowy.getWindowSize().y / 2.f
+                //cuz right now it's just constantly rotating for arround 180 degrees every frame
                 /*
                  the rotation matrix is a 2x2 matrix that is defined by 
                  [cos(θ) -sin(θ)] [x]
