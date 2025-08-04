@@ -1,7 +1,10 @@
 #include <pthread.h>
 #include <SFML/Audio.hpp>
+#include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Angle.hpp>
+#include <SFML/System/Vector2.hpp>
 #include <SFML/Window.hpp>
 #include <cstdlib>
 #include <iostream>
@@ -14,13 +17,14 @@ int main()
     sf::RenderWindow window(sf::VideoMode({1280, 720}), "Polybius",sf::Style::Default, sf::State::Windowed);
  
     // Load a sprite to display
+    const sf::Vector2f center = {window.getSize().x / 2.f, window.getSize().y / 2.f};
     const sf::Texture texture("./assets/sprites/ship.png");
     sf::Sprite sprite(texture);
-    sprite.setScale({4,4});
+    sprite.setScale({4,4}); //setting the scale to 4 times the size because the original size is way to small to be seen on a large screen
     sprite.setOrigin({texture.getSize().x / 2.f, texture.getSize().y / 2.f});
     sprite.setPosition({(window.getSize().x / 2.f) + 100, window.getSize().y / 2.f});
 
-     //kinda keep that snippet for subliminal message. Problably outsource that into its own procedure
+     //gonna keep that snippet for subliminal message. Problably outsource that into its own procedure
      // Create a graphical text to display
      //const sf::Font font("./assets/fonts/Polybius1981.ttf");
      //sf::Text text(font, "Hello SFML", 50);
@@ -31,7 +35,6 @@ int main()
  
     // Play the music
     // music.play();
- 
     // Start the game loop
     while (window.isOpen())
     {
@@ -46,7 +49,9 @@ int main()
                 /*
                  the rotation matrix is a 2x2 matrix that is defined by 
                  [cos(θ) -sin(θ)] [x]
-                 [sin(θ) cos(θ)]  [y]
+                 [sin(θ) cos(θ)]  [y] =
+                 [x * cos(θ)) - y * sin(θ)]
+                 [x * sin(θ) + y * cos(θ)]
                  */
             else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
                 if (keyPressed->scancode == sf::Keyboard::Scancode::Escape) {
@@ -63,6 +68,7 @@ int main()
 
                     // PROBLEM: it's currently rotating the sprite 180 degree every frame. I just need it once. need to figure it out how
                     // TODO: need to implement a if clause that checks if the sprite has already rotated once.
+                    // Another idea is to get the number of every corner of the sprite and them allign them in the wanted position
                     sprite.rotate(sf::degrees(180));                 
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Up) {
@@ -86,6 +92,7 @@ int main()
         // Update the window
         window.display();
     }
+    //music.stop();
     std::cout << std::endl;
     return EXIT_SUCCESS;
 }
