@@ -2,6 +2,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/ConvexShape.hpp>
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Angle.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -12,10 +13,9 @@
 int main()
 {
     //init section
-
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode({1280, 720}), "Polybius",sf::Style::Default, sf::State::Windowed);
- 
+    sf::RenderWindow window(sf::VideoMode::getDesktopMode(), "Polybius",sf::Style::Default, sf::State::Windowed);
+
     // Load a sprite to display
     const sf::Vector2f center = {window.getSize().x / 2.f, window.getSize().y / 2.f};
     const sf::Texture texture("./assets/sprites/ship.png");
@@ -76,7 +76,10 @@ int main()
                     //same goes here. need to place that if clause here as well.
                     sprite.rotate(sf::degrees(180));
                 }
-                std::cout << "x position of the ship: " <<  sprite.getPosition().x << " y position of the ship: " << sprite.getPosition().y << "\n";
+                if (sprite.getPosition().x >= window.getSize().x -1){
+                    std::cout<< "Border crossed\n";
+                }
+                //std::cout << "x position of the ship: " <<  sprite.getPosition().x << " y position of the ship: " << sprite.getPosition().y << "\n";
             }
         }
  
