@@ -1,9 +1,6 @@
 #include <pthread.h>
 #include <SFML/Audio.hpp>
-#include <SFML/Audio/Music.hpp>
 #include <SFML/Graphics.hpp>
-#include <SFML/Graphics/ConvexShape.hpp>
-#include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/System/Angle.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Window.hpp>
