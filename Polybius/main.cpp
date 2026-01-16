@@ -45,10 +45,8 @@ int main()
                 //cuz right now it's just constantly rotating for arround 180 degrees every frame
                 /*
                  the rotation matrix is a 2x2 matrix that is defined by 
-                 [cos(θ) -sin(θ)] [x]
-                 [sin(θ) cos(θ)]  [y] =
-                 [x * cos(θ)) - y * sin(θ)]
-                 [x * sin(θ) + y * cos(θ)]
+                 [cos(θ) -sin(θ)] [x]   [x * cos(θ)) - y * sin(θ)]
+                 [sin(θ) cos(θ)]  [y] = [x * sin(θ) + y * cos(θ)]
                  */
             else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
                 if (keyPressed->scancode == sf::Keyboard::Scancode::Escape) {
