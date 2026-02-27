@@ -38,43 +38,50 @@ int main()
         // Process events
         while (const std::optional event = window.pollEvent())
         {
+            // constantly calculating the raduis. This needs to be done because the ship is moving upwards and downwards
+            // Formula for calculating the slope: m = (y2 - y1) / (x2 - x1)
+            // Ship is x2 and y2.
+            // Center is x1 and y1
+            sf::Vector2f slope({sprite.getPosition().x - center.x, sprite.getPosition().y - center.y});
+            
+            
+            //due to the definition of Vector2f slope.x will calculate calculates y2 - y1 and slope.y calculates x2 - x1
+            //double radius = (slope.y) / (slope.x); 
+
             // Close window: exit
             if (event->is<sf::Event::Closed>())
                 window.close();
-                //todo need to implement a rotation matrix that rotates the ship arround window.getWindowSize().x / 2 and windowy.getWindowSize().y / 2.f
+            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
+                //todo need to implement a rotation matrix that rotates the ship arround window.getWindowSize().x / 2 and window.getWindowSize().y / 2.f
                 //cuz right now it's just constantly rotating for arround 180 degrees every frame
                 /*
                  the rotation matrix is a 2x2 matrix that is defined by 
                  [cos(θ) -sin(θ)] [x]   [x * cos(θ)) - y * sin(θ)]
                  [sin(θ) cos(θ)]  [y] = [x * sin(θ) + y * cos(θ)]
                  */
-            else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
                 if (keyPressed->scancode == sf::Keyboard::Scancode::Escape) {
                     window.close();
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Right) {
                     sprite.move({2,0});
                 }
+
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Left) {
                 sprite.move({-2,0});
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Down) {
-                    sprite.move({0, 2});
+                    sprite.move({0, slope.y + 0.75f});
 
                     // PROBLEM: it's currently rotating the sprite 180 degree every frame. I just need it once. need to figure it out how
                     // TODO: need to implement a if clause that checks if the sprite has already rotated once.
                     // Another idea is to get the number of every corner of the sprite and them allign them in the wanted position
-                    sprite.rotate(sf::degrees(180));                 
+                    //sprite.rotate(sf::degrees(180));                 
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Up) {
-                    sprite.move({0, -2});
+                    sprite.move({0, -(slope.y + 0.75f)});
                     //same goes here. need to place that if clause here as well.
-                    sprite.rotate(sf::degrees(180));
+                    //sprite.rotate(sf::degrees(180));
                 }
-                if (sprite.getPosition().x >= window.getSize().x -1){
-                    std::cout<< "Border crossed\n";
-                }
-                //std::cout << "x position of the ship: " <<  sprite.getPosition().x << " y position of the ship: " << sprite.getPosition().y << "\n";
             }
         }
  
