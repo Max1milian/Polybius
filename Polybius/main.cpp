@@ -63,22 +63,22 @@ int main()
                 }
 
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Left) {
-                sprite.move({-2,0});
+                    sprite.move({-2,0});
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Down) {
-                    sprite.move({0, slope.x + 0.75f});
-                    std::cout <<  slope.x + 0.75f << "\n";
+                    sprite.move({0, slope.x - 0.75f});
+                    std::cout <<  slope.x - 0.75f << "\n";
 
                     // PROBLEM: it's currently rotating the sprite 180 degree every frame. I just need it once. need to figure it out how
                     // TODO: need to implement a if clause that checks if the sprite has already rotated once.
                     // Another idea is to get the number of every corner of the sprite and them allign them in the wanted position
-                    sprite.setRotation(sf::degrees(360));                 
+                    sprite.setRotation(sf::degrees(180));
                 }
                 else if (keyPressed->scancode == sf::Keyboard::Scancode::Up) {
-                    sprite.move({0, -(slope.y + 0.75f)});
-                    std::cout <<  -(slope.y + 0.75f) << "\n";
+                    sprite.move({0, slope.x + 0.75f});
+                    std::cout <<  slope.x + 0.75f << "\n";
                     //same goes here. need to place that if clause here as well.
-                    sprite.setRotation(sf::degrees(180));
+                    sprite.setRotation(sf::degrees(360));
                 }
             }
         }
